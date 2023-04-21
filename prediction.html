@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Prediction Results</title>
+  </head>
+  <body>
+    <h1>Prediction Results</h1>
+    <div>
+      {% for i in range(len(encoded_images)) %}
+        <div style="float:left; margin-right:10px;">
+          <img src="data:image/{{ image_types[i] }};base64,{{ encoded_images[i] }}" alt="Test Image" />
+
+          <div>Predicted label: {{ class_names[predicted_labels[i]] }}</div>
+          <div>True label: {{ true_labels[i] }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
